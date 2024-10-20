@@ -1,0 +1,114 @@
+/* General body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1c1c1c;
+    color: white;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Ensure the body is at least full viewport height */
+}
+
+/* Container styles */
+.container {
+    width: 80%;
+    margin: 20px auto;
+}
+
+/* Title styles */
+.title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #f2f2f2;
+}
+
+/* Grid layout for the days */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    min-height: 80vh; /* Ensure the grid takes up at least 80% of the viewport height */
+}
+
+/* Day column styles */
+.day {
+    background-color: #333;
+    border: 2px solid #444;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures the exercises are spaced evenly */
+    height: 100%;
+}
+
+/* Day heading styles */
+.day h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    background-color: #555;
+    padding: 10px;
+    border-radius: 3px;
+    color: #f2f2f2;
+}
+
+/* Exercise block styles */
+.exercise {
+    background-color: #444;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: left;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+    flex-grow: 1; /* Allows each exercise block to grow and take available height */
+    margin-bottom: 10px; /* Add space between exercises */
+    transition: background-color 0.3s, transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Ensure content is centered within each block */
+}
+
+.exercise:last-child {
+    margin-bottom: 0; /* Removes margin from the last exercise block */
+}
+
+.exercise:hover {
+    background-color: #555;
+    transform: translateY(-2px);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Title of the exercise */
+.exercise-title {
+    font-weight: bold;
+    font-size: 18px; /* Larger font size for better use of space */
+    color: #f2f2f2;
+    margin-bottom: 5px;
+    line-height: 1.5; /* Adjust line-height for more readable spacing */
+    flex-grow: 1; /* Allow title to expand vertically */
+}
+
+/* Exercise details */
+.exercise div {
+    font-size: 16px; /* Slightly larger font size for details */
+    color: #d3d3d3;
+    flex-grow: 1; /* Allow details to expand and take available space */
+    line-height: 1.4;
+}
+
+/* Adjustments for responsive layout */
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
